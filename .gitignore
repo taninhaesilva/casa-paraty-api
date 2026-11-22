@@ -1,0 +1,16 @@
+# Ambiente virtual
+env/
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Banco de dados local (é recriado automaticamente)
+database/*.sqlite3
+
+# Editores
+.vscode/
+.idea/
+.DS_Store
