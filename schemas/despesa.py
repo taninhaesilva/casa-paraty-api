@@ -25,14 +25,14 @@ class DespesaSchema(BaseModel):
 
 class DespesaBuscaSchema(BaseModel):
     """Identifica a despesa pelo id."""
-    id: int = Field(..., examples=[1])
+    id: int = Field(..., description="id da despesa.")
 
 
 class DespesaFiltroSchema(BaseModel):
     """Filtros opcionais da listagem de despesas."""
-    ano: Optional[int] = Field(None, ge=2000, le=2100, examples=[2027])
-    mes: Optional[int] = Field(None, ge=1, le=12, examples=[1])
-    categoria: Optional[CategoriaDespesa] = None
+    ano: Optional[int] = Field(None, ge=2000, le=2100, description="Ano, ex.: 2027.")
+    mes: Optional[int] = Field(None, ge=1, le=12, description="Mês de 1 a 12 (exige o ano).")
+    categoria: Optional[CategoriaDespesa] = Field(None, description="Categoria da despesa.")
 
     @model_validator(mode="after")
     def mes_exige_ano(self):

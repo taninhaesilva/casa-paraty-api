@@ -33,15 +33,15 @@ class ReservaSchema(BaseModel):
 
 class ReservaBuscaSchema(BaseModel):
     """Identifica a reserva pelo id."""
-    id: int = Field(..., examples=[1])
+    id: int = Field(..., description="id da reserva.")
 
 
 class ReservaFiltroSchema(BaseModel):
     """Filtros opcionais da listagem. Com ano (e mês), traz as estadias daquele período."""
-    ano: Optional[int] = Field(None, ge=2000, le=2100, examples=[2027])
-    mes: Optional[int] = Field(None, ge=1, le=12, examples=[1])
-    plataforma_id: Optional[int] = Field(None, examples=[1])
-    status: Optional[StatusReserva] = None
+    ano: Optional[int] = Field(None, ge=2000, le=2100, description="Ano, ex.: 2027.")
+    mes: Optional[int] = Field(None, ge=1, le=12, description="Mês de 1 a 12 (exige o ano).")
+    plataforma_id: Optional[int] = Field(None, description="id da plataforma.")
+    status: Optional[StatusReserva] = Field(None, description="confirmada ou cancelada.")
 
     @model_validator(mode="after")
     def mes_exige_ano(self):

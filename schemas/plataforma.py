@@ -20,7 +20,7 @@ class PlataformaSchema(BaseModel):
 
 class PlataformaBuscaSchema(BaseModel):
     """Identifica a plataforma pelo id."""
-    id: int = Field(..., examples=[1])
+    id: int = Field(..., description="id da plataforma.")
 
 
 class PlataformaViewSchema(BaseModel):

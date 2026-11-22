@@ -8,8 +8,8 @@ __all__ = ["ResumoBuscaSchema", "ResumoViewSchema"]
 
 class ResumoBuscaSchema(BaseModel):
     """Período do resumo. Sem mês, o resumo é do ano inteiro."""
-    ano: int = Field(..., ge=2000, le=2100, examples=[2027])
-    mes: Optional[int] = Field(None, ge=1, le=12, examples=[1])
+    ano: int = Field(..., ge=2000, le=2100, description="Ano, ex.: 2027.")
+    mes: Optional[int] = Field(None, ge=1, le=12, description="Mês de 1 a 12. Vazio = ano inteiro.")
 
 
 class ResumoPlataformaSchema(BaseModel):
