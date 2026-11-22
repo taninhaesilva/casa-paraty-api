@@ -54,7 +54,7 @@ casa-paraty-api/
 
 1. **Clone o repositório** e entre na pasta:
    ```bash
-   git clone https://github.com/SEU-USUARIO/casa-paraty-api.git
+   git clone https://github.com/taninhaesilva/casa-paraty-api.git
    cd casa-paraty-api
    ```
 
